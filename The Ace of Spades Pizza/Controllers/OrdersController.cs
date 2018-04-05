@@ -35,8 +35,6 @@ namespace The_Ace_of_Spades_Pizza.Controllers
                 return HttpNotFound();
             }
             return View(order);
-
-
         }
 
         // GET: Orders/Create
@@ -51,6 +49,7 @@ namespace The_Ace_of_Spades_Pizza.Controllers
 
             model.Pizzas = selectedPizzaList;
             model.DeliveryArrivalDateTime = DateTime.Now.AddHours(1);
+
             model.Quantity = 1;
 
             return View(model);
