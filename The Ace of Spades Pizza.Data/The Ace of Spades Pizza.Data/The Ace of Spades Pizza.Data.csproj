@@ -47,12 +47,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DatabaseContext.cs" />
+    <Compile Include="Migrations\201804072332085_initial.cs" />
+    <Compile Include="Migrations\201804072332085_initial.Designer.cs">
+      <DependentUpon>201804072332085_initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201804072334341_AddRequiredFields.cs" />
+    <Compile Include="Migrations\201804072334341_AddRequiredFields.Designer.cs">
+      <DependentUpon>201804072334341_AddRequiredFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Order.cs" />
+    <Compile Include="Model\Pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201804072332085_initial.resx">
+      <DependentUpon>201804072332085_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804072334341_AddRequiredFields.resx">
+      <DependentUpon>201804072334341_AddRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
