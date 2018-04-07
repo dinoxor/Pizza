@@ -1,0 +1,50 @@
+Coding Exercise - The Ace of Spades Pizza Co.
+
+Basic requirements:
+
+Application name: The Pizza ordering Web App
+We have a customer called "Ace Of Spades Pizza" who is expanding and needs a web application for customers to submit orders online. What is
+amazing and particular at the same time about this client is that they only have 1 kind of pizza, they call it the "The One" and it is delicious!
+
+The application we are building consists of 2 screens:
+           1. The first screen will be the page where the clients can place the order. This page will be an HTML form that will have fields and a
+               submit button. When clicking on the save button the data inputted into the form should be saved in a database. The screen should
+               contain the following fields
+
+                           The name of the person ordering,
+                           The phone number
+                           The date and time the pizza should be delivered
+                           The number of pizzas being ordered
+           2. Second screen will be a page that displays all orders that have been placed. This list should be ordered with the most current order at
+               the top.
+
+Technologies to use:
+
+Basic technologies to be used are HTML, Asp.Net MVC with a MS-SQL database. If you want to use other complementing technologies please go
+ahead.
+
+Tools to download and use:
+
+You can download Visual Studio Community edition here: https://www.visualstudio.com/vs/community/
+SQL server express can be used and downloaded here: https://www.microsoft.com/en-us/download/details.aspx?id=52679
+
+Extra points:
+
+           1. If you have a link to see the application running (can use https://appharbor.com/ or azure)
+           2. If we can differentiate your code from the default MVC starter template (if you are using it.)
+           3. If you use a css framework
+           4. If you use Entity Framework
+           5. If you validate the form
+           6. If the site looks nice
+           7. If you use an IoC framework.
+           8. If you add Unit Tests
+           9. If you develop this as a SPA with AngularJs and WebAPI 2.0
+
+Delivery:
+
+The code should be checked in to your personal github repository. I do expect a few commits and not jut one gigantic commit with everything in it.
+
+Timeline:
+
+This project should not take more than 2 weeks. The faster you point me towards a working solution the better.
+Happy coding =)
