@@ -69,7 +69,7 @@
                 @Html.EditorFor(model => model.DeliveryArrivalDateTime, new { htmlAttributes = new { @class = "form-control date-picker" } })
                 @Html.ValidationMessageFor(model => model.DeliveryArrivalDateTime, "", new { @class = "text-danger" })
             </div>
-           
+
         </div>
 
         <div class="form-group row">
@@ -93,7 +93,7 @@
             <strong>@Html.Raw(Model.ConfirmationMessage)</strong>
         </div>
     }
- }
+}
 <br />
 <br />
 
@@ -121,16 +121,21 @@
             });
 
         });
+        $(function () {
+            $.validator.methods.date = function (value, element) {
+                if ($.browser.webkit) {
 
-        jQuery.validator.methods.date = function (value, element) {
-            var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-            if (isChrome) {
-                var d = new Date();
-                return this.optional(element) || !/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
-            } else {
-                return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
-            }
-        };
+                    //ES - Chrome does not use the locale when new Date objects instantiated:
+                    var d = new Date();
+
+                    return this.optional(element) || !/Invalid|NaN/.test(new Date(d.toLocaleDateString(value)));
+                }
+                else {
+
+                    return this.optional(element) || !/Invalid|NaN/.test(new Date(value));
+                }
+            };
+        });
 
     });
 
