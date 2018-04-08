@@ -8,7 +8,7 @@ namespace The_Ace_of_Spades_Pizza
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
+            //ConfigureAuth(app);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace The_Ace_of_Spades_Pizza.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("DefaultConnection", throwIfV1Schema: false)
+            : base("PizzaConnectionString", throwIfV1Schema: false)
         {
         }
 
