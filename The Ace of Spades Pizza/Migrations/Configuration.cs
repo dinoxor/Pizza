@@ -36,7 +36,8 @@ namespace The_Ace_of_Spades_Pizza.Migrations
             pizzas.Add(pizza4);
             pizzas.Add(pizza5);
 
-            context.Pizzas.AddRange(pizzas);
+            pizzas.ForEach(x => context.Pizzas.AddOrUpdate(y => y.Name, x));
+            //context.Pizzas.AddRange(pizzas);
 
             var customer1 = new Customer { FirstName = "First", LastName = "Guy", PhoneNumber = "1234567890" };
             var customer2 = new Customer { FirstName = "Second", LastName = "Guy", PhoneNumber = "2222222222" };
@@ -45,17 +46,18 @@ namespace The_Ace_of_Spades_Pizza.Migrations
             customers.Add(customer1);
             customers.Add(customer2);
 
-            context.Customers.AddRange(customers);
+            customers.ForEach(x => context.Customers.AddOrUpdate(y => y.FirstName, x));
+            //context.Customers.AddRange(customers);
 
-            var orders = new List<Order>
-            {
-                new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza1, Quantity = 2},
-                new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza2},
-                new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza3},
-                new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza4},
-            };
+            //var orders = new List<Order>
+            //{
+            //    new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza1, Quantity = 2},
+            //    new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza2},
+            //    new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza3},
+            //    new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza4},
+            //};
 
-            context.Orders.AddRange(orders);
+            //context.Orders.AddRange(orders);
 
         }
     }
