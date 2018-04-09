@@ -1,0 +1,66 @@
+﻿@model IEnumerable < The_Ace_of_Spades_Pizza.Data.Model.Order>
+
+@{
+    ViewBag.Title = "Orders";
+}
+
+<h2 class="mt-5">Current Orders</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            First Name
+        </th>
+        <th>
+            Last Name
+        </th>
+        <th>
+            Phone Number
+        </th>
+        <th>
+            Pizza
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th>
+            Order Placed
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pizza.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OrderCreateddDateTime)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |*@
+                @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+                @*@Html.ActionLink("Delete", "Delete", new { firstName = item.Customer.FirstName, lastName = item.Customer.LastName, phoneNumber = item.Customer.PhoneNumber, pizzaId = item.PizzaId})*@
+            </td>
+        </tr>
+    }
+
+
+    <p>
+        @Html.ActionLink("Place an order", "Create")
+    </p>
+
+</table>
