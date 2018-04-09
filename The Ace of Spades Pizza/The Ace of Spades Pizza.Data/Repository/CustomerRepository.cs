@@ -9,9 +9,11 @@ namespace The_Ace_of_Spades_Pizza.Data.Repository
 {
     public class CustomerRepository: IRepository<Customer>
     {
+        private DatabaseContext context = new DatabaseContext();
+
         public IEnumerable<Customer> GetAll()
         {
-            using (var context = new DatabaseContext())
+            using (context)
             {
                 return context.Customers.ToList();
             }

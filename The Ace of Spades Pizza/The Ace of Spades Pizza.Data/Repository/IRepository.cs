@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace The_Ace_of_Spades_Pizza.Data.Repository
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : class
     {
         IEnumerable<T> GetAll();
         void Create(T model);
