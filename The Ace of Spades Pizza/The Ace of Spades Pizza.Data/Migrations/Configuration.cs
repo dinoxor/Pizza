@@ -48,15 +48,18 @@ namespace The_Ace_of_Spades_Pizza.Data.Migrations
             customers.ForEach(x => context.Customers.AddOrUpdate(y => y.FirstName, x));
             //context.Customers.AddRange(customers);
 
-            var orders = new List<Order>
+            if (!context.Orders.Any())
             {
-                new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza1, Quantity = 2},
-                new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza2},
-                new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza3},
-                new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza4},
-            };
-
-            context.Orders.AddRange(orders);
+                var orders = new List<Order>
+                        {
+                            new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza1, Quantity = 2},
+                            new Order {Customer = customer1, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza2},
+                            new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza3},
+                            new Order {Customer = customer2, OrderCreateddDateTime = DateTime.Now, DeliveryArrivalDateTime = DateTime.Now.AddHours(1), Pizza = pizza4},
+                        };
+                context.Orders.AddRange(orders);
+                context.SaveChanges();
+            }
         }
     }
 }

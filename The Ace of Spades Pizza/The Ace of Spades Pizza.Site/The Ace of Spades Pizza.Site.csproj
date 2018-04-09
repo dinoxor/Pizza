@@ -265,6 +265,7 @@
     <Content Include="Scripts\i18n\jquery-ui-timepicker-vi.js" />
     <Content Include="Scripts\i18n\jquery-ui-timepicker-zh-CN.js" />
     <Content Include="Scripts\i18n\jquery-ui-timepicker-zh-TW.js" />
+    <None Include="Properties\PublishProfiles\TheAceofSpadesPizza - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
