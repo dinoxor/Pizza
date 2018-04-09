@@ -9,7 +9,7 @@ using The_Ace_of_Spades_Pizza.Data.Model;
 
 namespace The_Ace_of_Spades_Pizza.Data.Repository
 {
-    public class OrderRepository
+    public class OrderRepository:IRepository<Order>
     {
         public IEnumerable<Order> GetAll()
         {
@@ -40,6 +40,11 @@ namespace The_Ace_of_Spades_Pizza.Data.Repository
                 context.Orders.AddOrUpdate(order);
                 context.SaveChanges();
             }
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

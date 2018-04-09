@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using The_Ace_of_Spades_Pizza.Site.Container;
 
 namespace The_Ace_of_Spades_Pizza.Site
 {
@@ -16,6 +17,7 @@ namespace The_Ace_of_Spades_Pizza.Site
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            IocContainer.Setup();
         }
     }
 }

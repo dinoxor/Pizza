@@ -7,7 +7,7 @@ using The_Ace_of_Spades_Pizza.Data.Model;
 
 namespace The_Ace_of_Spades_Pizza.Data.Repository
 {
-    public class CustomerRepository
+    public class CustomerRepository: IRepository<Customer>
     {
         public IEnumerable<Customer> GetAll()
         {
@@ -24,6 +24,16 @@ namespace The_Ace_of_Spades_Pizza.Data.Repository
                 context.Customers.Add(newCustomer);
                 context.SaveChanges();
             }
+        }
+
+        public void Update(Customer model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

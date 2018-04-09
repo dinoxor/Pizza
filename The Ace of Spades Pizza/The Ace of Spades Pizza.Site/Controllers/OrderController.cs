@@ -11,22 +11,22 @@ namespace The_Ace_of_Spades_Pizza.Site.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly OrderRepository _orderRepository;
-        private readonly PizzaRepository _pizzaRepository;
-        private readonly CustomerRepository _customerRepository;
-        
-        public OrderController ()
+        private IRepository<Order> _orderRepository;
+        private IRepository<Pizza> _pizzaRepository;
+        private IRepository<Customer> _customerRepository;
+
+        public OrderController(IRepository<Order> orderRepository, IRepository<Pizza> pizzaRepository, IRepository<Customer> customerRepository)
         {
-            _orderRepository = new OrderRepository();
-            _pizzaRepository = new PizzaRepository();
-            _customerRepository = new CustomerRepository();
+            _orderRepository = orderRepository;
+            _pizzaRepository = pizzaRepository;
+            _customerRepository = customerRepository;
         }
 
         // GET: Orders
         public ActionResult Index()
         {
             var orders = _orderRepository.GetAll().OrderByDescending(x => x.OrderCreateddDateTime);
-            
+
             return View(orders);
         }
 
@@ -35,10 +35,10 @@ namespace The_Ace_of_Spades_Pizza.Site.Controllers
         {
             //ViewBag.CustomerId = new SelectList(db.Customers, "CustomerId", "FirstName");
             //var pizzas = new SelectList(db.Pizzas, "PizzaId", "Name");
-            
+
             var pizzas = _pizzaRepository.GetAll();
 
-            var model = new OrderCreateModel();            
+            var model = new OrderCreateModel();
 
             model.Pizzas = GetSelectListItems(pizzas);
             model.DeliveryArrivalDateTime = DateTime.Now.AddHours(1);
@@ -83,7 +83,7 @@ namespace The_Ace_of_Spades_Pizza.Site.Controllers
             int pizzaId = 0;
             Int32.TryParse(postedModel.PizzaId, out pizzaId);
 
-            
+
 
             if (ModelState.IsValid)
             {

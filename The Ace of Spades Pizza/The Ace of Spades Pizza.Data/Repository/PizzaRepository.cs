@@ -7,7 +7,7 @@ using The_Ace_of_Spades_Pizza.Data.Model;
 
 namespace The_Ace_of_Spades_Pizza.Data.Repository
 {
-    public class PizzaRepository
+    public class PizzaRepository : IRepository<Pizza>
     {
         public IEnumerable<Pizza> GetAll()
         {
@@ -15,6 +15,21 @@ namespace The_Ace_of_Spades_Pizza.Data.Repository
             {
                 return context.Pizzas.ToList();
             }
+        }
+
+        public void Create(Pizza model)
+        {
+            throw new NotImplementedException();
+        }
+
+        public void Delete(int id)
+        {
+            throw new NotImplementedException();
+        }       
+
+        public void Update(Pizza model)
+        {
+            throw new NotImplementedException();
         }
     }
 }
