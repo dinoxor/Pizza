@@ -10,25 +10,19 @@ namespace The_Ace_of_Spades_Pizza.Data.Model
 {
     public class Order
     {
-        [Key]
-        [Column(Order = 0)]
-        [ForeignKey("Customer")]
-        public int CustomerId { get; set; }
-
-        [Key]
-        [Column(Order = 1)]
-        [ForeignKey("Pizza")]
+        public int OrderId { get; set; }       
+        
+        public int CustomerId { get; set; }        
         public int PizzaId { get; set; }
 
         [Range(1, 100)]
         public int Quantity { get; set; } = 1;
 
         public DateTime OrderCreateddDateTime { get; set; } = DateTime.Now;
-
-        //[CurrentDate(ErrorMessage = "Date must be after or equal to current date")]
+               
         public DateTime DeliveryArrivalDateTime { get; set; } = DateTime.Now;
-
-        public virtual Customer Customer { get; set; }
+                
+        public virtual Customer Customer { get; set; }              
         public virtual Pizza Pizza { get; set; }
     }
 }

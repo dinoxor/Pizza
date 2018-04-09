@@ -56,6 +56,10 @@
     <Compile Include="Migrations\201804072334341_AddRequiredFields.Designer.cs">
       <DependentUpon>201804072334341_AddRequiredFields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201804081944401_AddOrderId.cs" />
+    <Compile Include="Migrations\201804081944401_AddOrderId.Designer.cs">
+      <DependentUpon>201804081944401_AddOrderId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Order.cs" />
@@ -72,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201804072334341_AddRequiredFields.resx">
       <DependentUpon>201804072334341_AddRequiredFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201804081944401_AddOrderId.resx">
+      <DependentUpon>201804081944401_AddOrderId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

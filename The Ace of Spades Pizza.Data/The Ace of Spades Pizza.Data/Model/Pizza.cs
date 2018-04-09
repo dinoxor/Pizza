@@ -16,7 +16,6 @@ namespace The_Ace_of_Spades_Pizza.Data.Model
         public string Name { get; set; }
         public string Description { get; set; }
 
-        [InverseProperty("Pizza")]
         public virtual ICollection<Order> Orders { get; set; }
     }
 }

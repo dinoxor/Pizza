@@ -35,7 +35,8 @@ namespace The_Ace_of_Spades_Pizza.Data.Migrations
             pizzas.Add(pizza4);
             pizzas.Add(pizza5);
 
-            context.Pizzas.AddRange(pizzas);
+            pizzas.ForEach(x => context.Pizzas.AddOrUpdate(y => y.Name, x));
+            //context.Pizzas.AddRange(pizzas);
 
             var customer1 = new Customer { FirstName = "First", LastName = "Guy", PhoneNumber = "1234567890" };
             var customer2 = new Customer { FirstName = "Second", LastName = "Guy", PhoneNumber = "2222222222" };
@@ -44,7 +45,8 @@ namespace The_Ace_of_Spades_Pizza.Data.Migrations
             customers.Add(customer1);
             customers.Add(customer2);
 
-            context.Customers.AddRange(customers);
+            customers.ForEach(x => context.Customers.AddOrUpdate(y => y.FirstName, x));
+            //context.Customers.AddRange(customers);
 
             var orders = new List<Order>
             {
